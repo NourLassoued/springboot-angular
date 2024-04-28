@@ -1,0 +1,76 @@
+/* Style pour le formulaire de participation */
+.participation-form {
+    margin-top: 20px;
+  }
+  
+  /* Style pour les champs de formulaire */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Style pour les étiquettes des champs de formulaire */
+  .mat-form-field-label {
+    color: #333; /* Couleur du texte */
+  }
+  
+  /* Style pour les indicateurs */
+  .mat-hint {
+    font-size: 14px; /* Taille de la police */
+    color: #666; /* Couleur du texte */
+  }
+  
+  /* Style pour les champs de saisie */
+  .mat-input-element {
+    font-size: 16px; /* Taille de la police */
+  }
+  
+  /* Style pour le bouton "Submit" */
+  .mat-raised-button {
+    background-color: #f44336; /* Couleur de fond */
+    color: #f44336; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+  }
+  
+  /* Effet de survol pour le bouton "Submit" */
+  .mat-raised-button:hover {
+    background-color: #f44336; /* Couleur de fond au survol */
+  }
+  
+  /* Effet de focus pour les champs de saisie */
+  .mat-focused .mat-form-field-label {
+    color: #007bff; /* Couleur de l'étiquette au focus */
+  }
+  
+  /* Style d'erreur pour les champs de saisie invalides */
+  .mat-form-field-invalid .mat-form-field-label {
+    color: #f44336; /* Couleur du texte en cas d'erreur */
+  }
+  
+  /* Style d'erreur pour les champs de saisie invalides */
+  .mat-form-field-invalid .mat-input-element {
+    border-bottom-color: #f44336; /* Couleur de la bordure inférieure en cas d'erreur */
+  }
+  
+  /* Style pour le message d'erreur */
+  .mat-error {
+    font-size: 14px; /* Taille de la police */
+    color: #f44336; /* Couleur du texte */
+  }
+  
+  /* Effet de survol pour les champs de formulaire */
+  .mat-form-field:hover {
+    background-color: #f0f0f0; /* Couleur de fond au survol */
+  }
+  
+  /* Transition pour les champs de formulaire */
+  .mat-form-field {
+    transition: background-color 0.3s ease; /* Transition en douceur */
+  }
+  /* Style pour le bouton "Submit" avec fond rouge */
+button[type="submit"] {
+    background-color: #cd0707; /* Couleur de fond rouge */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+  }
+  

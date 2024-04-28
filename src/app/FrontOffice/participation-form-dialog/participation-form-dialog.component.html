@@ -1,0 +1,15 @@
+<h2>Participation Form</h2>
+<form (submit)="onSubmit(participationForm.value)" #participationForm="ngForm">
+  <!-- Vos champs de formulaire ici -->
+  <mat-form-field>
+    <mat-label>Injury:</mat-label>
+    <input matInput type="text" name="injury" ngModel required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Emergency Number:</mat-label>
+    <input matInput type="text" name="emergencyNumber" ngModel required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

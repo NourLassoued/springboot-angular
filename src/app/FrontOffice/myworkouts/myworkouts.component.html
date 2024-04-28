@@ -1,0 +1,40 @@
+<link href="/assets/FrontOfficeAssets/img/favicon.png" rel="icon">
+<link href="/assets/FrontOfficeAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="/assets/FrontOfficeAssets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/FrontOfficeAssets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="/assets/FrontOfficeAssets/vendor/aos/aos.css" rel="stylesheet">
+<link href="/assets/FrontOfficeAssets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="/assets/FrontOfficeAssets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="/assets/FrontOfficeAssets/css/main.css" rel="stylesheet">
+
+<!-- Navbar -->
+<app-nav-bar-front></app-nav-bar-front>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="workout-container">
+
+    <div *ngFor="let workout of workouts" class="workout-card" (click)="navigateToExerciseDays(workout.id_workout)">
+      <h2>{{ workout.name }}</h2>
+      <p><strong>Description:</strong> {{ workout.description }}</p>
+      <p><strong>Duration:</strong> {{ workout.duration }} minutes</p>
+      <p><strong>Target Group:</strong> {{ workout.targetGroup }}</p>
+      <p><strong>Category:</strong> {{ workout.category }}</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" [style.width]="workout.progress + '%'" aria-valuemin="0" aria-valuemax="100">{{ workout.progress }}%</div>
+      </div>
+    </div>
+  </div>
+  <app-footer-front></app-footer-front>

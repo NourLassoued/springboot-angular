@@ -1,0 +1,81 @@
+<div class="event-management">
+    <div class="search-add-bar">
+        <mat-form-field appearance="fill">
+            <mat-label>Search...</mat-label>
+            <input matInput (keyup)="applyFilter($event)">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="createEvent()">Add Event</button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <!-- Titre Column -->
+        <ng-container matColumnDef="titre">
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('titre','asc')">Title</th>
+            <td mat-cell *matCellDef="let event">{{ event.titre }}</td>
+        </ng-container>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('description','asc')">Description</th>
+            <td mat-cell *matCellDef="let event">{{ event.description }}</td>
+        </ng-container>
+
+        <!-- Date d'événement Column -->
+        <ng-container matColumnDef="eventDate">
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('eventDate','asc')">Date d'événement</th>
+            <td mat-cell *matCellDef="let event">{{ event.eventDate | date }}</td>
+        </ng-container>
+
+        <!-- Durée Column -->
+        <ng-container matColumnDef="duration">
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('duration','asc')">Durée</th>
+            <td mat-cell *matCellDef="let event">{{ event.duration }}</td>
+        </ng-container>
+
+        <!-- Max Participation Column -->
+        <ng-container matColumnDef="maxParticiaption">
+           
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('maxParticiaption','asc')">Participation Max</th>
+            <td mat-cell *matCellDef="let event">{{event.maxParticiaption}}</td>
+        </ng-container>
+
+        <!-- Image Column -->
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef>Image</th>
+            <td mat-cell *matCellDef="let event">
+                <img *ngIf="event.image" [src]="getImageUrl(event.image)" alt="Event Image" width="100">
+            </td>
+        </ng-container>
+
+        <!-- Longitude Column -->
+        <ng-container matColumnDef="longitude">
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('longitude','asc')">Longitude</th>
+            <td mat-cell *matCellDef="let event">{{ event.longitude }}</td>
+        </ng-container>
+
+        <!-- Latitude Column -->
+        <ng-container matColumnDef="latitude">
+            <th mat-header-cell *matHeaderCellDef (click)="sortData('latitude','asc')">Latitude</th>
+            <td mat-cell *matCellDef="let event">{{ event.latitude }}</td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-heade>Actions</th>
+            <td mat-cell *matCellDef="let event">
+              <button mat-icon-button (click)="updatEvent(event.id)" color="primary">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deleteEvent(event.id)" color="warn">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+    <mat-paginator [pageSize]="4" [pageSizeOptions]="[4, 8, 16]" showFirstLastButtons></mat-paginator>
+</div>
+

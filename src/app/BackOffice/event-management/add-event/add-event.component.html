@@ -1,0 +1,37 @@
+<div class="add-event-container">
+    <h2>Add new event</h2>
+    <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()" class="add-event-form">
+        <mat-form-field appearance="fill">
+            <mat-label>Titre</mat-label>
+            <input matInput formControlName="titre" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" required></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Event date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="eventDate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Duration (hours)</mat-label>
+            <input matInput type="number" formControlName="duration" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Maximum participants</mat-label>
+            <input matInput type="number" formControlName="maxParticiaption" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Longitude</mat-label>
+            <input matInput type="number" formControlName="longitude" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Latitude</mat-label>
+            <input matInput type="number" formControlName="latitude" required>
+        </mat-form-field>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+</div>

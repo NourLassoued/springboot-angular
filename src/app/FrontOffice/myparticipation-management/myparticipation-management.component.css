@@ -1,0 +1,70 @@
+.participation-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px; /* Ajustez selon vos besoins */
+}
+
+.participation-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(33.333% - 40px); /* Trois cartes par ligne, en tenant compte de l'espace */
+  background-color: white;
+  box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+}
+
+.participation-card h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.participation-card p {
+  color: #666;
+  font-size: 14px;
+}
+
+.participation-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.participation-card li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .participation-card {
+    width: calc(50% - 40px); /* Deux cartes par ligne sur les écrans plus petits */
+  }
+}
+
+@media (max-width: 480px) {
+  .participation-card {
+    width: 100%; /* Pleine largeur pour les écrans très petits */
+  }
+}
+
+.participation-card button {
+  background-color: #4CAF50; /* Fond vert */
+  color: white; /* Texte blanc */
+  padding: 10px 15px; /* Rembourrage autour du texte */
+  margin: 10px 0; /* Marge autour du bouton */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur de pointeur au survol */
+  transition: background-color 0.3s, transform 0.2s; /* Transition fluide pour les effets au survol */
+}
+
+.participation-card button:hover {
+  background-color: #45a049; /* Nuance plus foncée de vert au survol */
+  transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.participation-card button:active {
+  transform: scale(0.95); /* Légère réduction de la taille lors du clic */
+}

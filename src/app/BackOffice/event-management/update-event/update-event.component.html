@@ -1,0 +1,54 @@
+<div class="update-event-container">
+    <h2>Update Event</h2>
+    <form [formGroup]="updateEventForm" (ngSubmit)="onSubmit()" class="update-event-form">
+        
+      <!-- Title Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="titre" required>
+      </mat-form-field>
+
+      <!-- Description Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" required></textarea>
+      </mat-form-field>
+
+      <!-- Event Date Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Event Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="eventDate" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Duration Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Duration (hours)</mat-label>
+        <input matInput type="number" formControlName="duration" required>
+      </mat-form-field>
+
+      <!-- Max Participation Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Max Participation</mat-label>
+        <input matInput type="number" formControlName="maxParticiaption" required>
+      </mat-form-field>
+
+      <!-- Longitude Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Longitude</mat-label>
+        <input matInput type="number" formControlName="longitude" required>
+      </mat-form-field>
+
+      <!-- Latitude Field -->
+      <mat-form-field appearance="fill">
+        <mat-label>Latitude</mat-label>
+        <input matInput type="number" formControlName="latitude" required>
+      </mat-form-field>
+
+      <!-- Image Upload Field -->
+      <input type="file" (change)="onFileSelected($event)" accept="image/*">
+
+      <button mat-raised-button color="primary" type="submit">Update</button>
+    </form>
+</div>

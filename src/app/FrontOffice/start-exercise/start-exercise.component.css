@@ -1,0 +1,28 @@
+/* Add styles if necessary for the image and button */
+.exercise-container {
+    text-align: center;
+  }
+  
+  .exercise-image {
+    max-width: 100%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    margin: 20px 0; /* Adjust as needed */
+  }
+  
+
+  .complete-exercise-btn {
+    background-color: #007bff; /* couleur de fond */
+    color: #fff; /* couleur du texte */
+    padding: 10px 20px; /* espacement interne */
+    border: none; /* suppression de la bordure */
+    border-radius: 5px; /* arrondi des coins */
+    cursor: pointer; /* curseur de souris */
+    font-size: 16px; /* taille de police */
+    transition: background-color 0.3s ease; /* transition en douceur lors du survol */
+  
+    /* Effet de survol */
+    &:hover {
+      background-color: #0056b3; /* couleur de fond au survol */
+    }
+  }
+  

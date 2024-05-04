@@ -12,6 +12,7 @@ body {
   .sidebar {
     height: 100%;
     width: 300px;
+    width: 270px;
     position: fixed;
     top: 0;
     left: 0;
@@ -87,6 +88,7 @@ body {
     .sidebar h2 {font-size: 18px;}
     .sidebar ul li {font-size: 14px;}
   }
+  
   
   
   

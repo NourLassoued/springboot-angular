@@ -1,29 +1,23 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AllTemplateBackComponent } from './BackOffice/all-template-back/all-template-back.component';
 import { FooterBackComponent } from './BackOffice/footer-back/footer-back.component';
 import { AllTemplateFrontComponent } from './FrontOffice/all-template-front/all-template-front.component';
 import { BodyFrontComponent } from './FrontOffice/body-front/body-front.component';
 import { FooterFrontComponent } from './FrontOffice/footer-front/footer-front.component';
 import { NavBarFrontComponent } from './FrontOffice/nav-bar-front/nav-bar-front.component';
-import {HttpClientModule} from '@angular/common/http';
+
 import { WorkoutManagementComponent } from './BackOffice/workout-management/workout-management.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
+
+
+import { BrowserModule } from '@angular/platform-browser';
+
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSelectModule } from '@angular/material/select';
+
 import { AddWorkoutComponent } from './BackOffice/workout-management/add-workout/add-workout.component';
 import { UpdateWorkoutComponent } from './BackOffice/workout-management/update-workout/update-workout.component';
 import { ExercicedayManagementComponent } from './BackOffice/exerciceday-management/exerciceday-management.component';
 import { AddExerciseDayComponent } from './BackOffice/exerciceday-management/add-exercise-day/add-exercise-day.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+
 import { UpdateExerciseDayComponent } from './BackOffice/exerciceday-management/update-exercise-day/update-exercise-day.component';
 import { ExerciseManagementComponent } from './BackOffice/exercise-management/exercise-management.component';
 import { AddExerciseComponent } from './BackOffice/exercise-management/add-exercise/add-exercise.component';
@@ -62,7 +56,7 @@ import { QuizNotifyComponent } from './MentalComponents/quiz-notify/quiz-notify.
 import { ToastrModule } from 'ngx-toastr';
 import { RatingComponent } from './MentalComponents/rating/rating.component';
 
-import { MatTableModule } from '@angular/material/table';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -83,7 +77,7 @@ import { NutritionTrackComponent } from "./add-nutrition-tracking/add-nutrition-
 import { DailyCalorieServiceService } from "./services/daily-calorie-service.service";
 
 import { NotificationService } from "./services/notification.service";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
+
 import { ListrackComponent } from './listrack/listrack.component';
 import { NutritionComponent } from './nutrition/nutrition.component';
 import { EventManagementComponent } from './BackOffice/event-management/event-management.component';
@@ -107,12 +101,51 @@ import { MailSenderServiceService } from './mail-sender-service.service';
 
 
 
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth.interceptor';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { MatCardModule } from '@angular/material/card';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ErrorInterceptor } from './services/error.interceptor';
+import { LoginforgetpasswordComponent } from './pages/loginforgetpassword/loginforgetpassword.component';
+import { VerificationComponent } from './pages/verification/verification.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PostCategoryComponent } from './components/post-category/post-category.component';
+import { PostAbonnementComponent } from './components/post-abonnement/post-abonnement.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { UpdateAbonnementComponent } from './components/update-abonnement/update-abonnement.component';
+import { CustomerComponent } from './customer/customer.component';
+import { DashboardComponent } from './customer/components/dabhoard/dashboard/dashboard.component';
+import { CartComponent } from './customer/components/cart/cart.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PostCouponComponent } from './components/post-coupon/post-coupon.component';
+import { CouponsComponent } from './components/coupons/coupons.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { PlaceOrderComponent } from './customer/components/place-order/place-order.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MyOrdersComponent } from './customer/components/my-orders/my-orders.component';
+import { PostAbonnementFaqComponent } from './customer/components/post-abonnement-faq/post-abonnement-faq.component'; // Importez MatMenuModule
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AllTemplateBackComponent } from './BackOffice/all-template-back/all-template-back.component';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
 
 @NgModule({
   declarations: [
+    LoginforgetpasswordComponent,
     AppComponent,
     AllTemplateBackComponent,
     NavbarBackComponent,
@@ -202,6 +235,26 @@ import { MailSenderServiceService } from './mail-sender-service.service';
     MapDialogComponent,
      
 
+  
+    NavbarComponent,
+    SignupComponent,
+    LoginComponent,
+    UserDashboardComponent,
+    ProfileComponent,
+    VerificationComponent,
+    PostCategoryComponent,
+    PostAbonnementComponent,
+    UpdateAbonnementComponent,
+    CustomerComponent,
+    DashboardComponent,
+    CartComponent,
+    PostCouponComponent,
+    CouponsComponent,
+    PlaceOrderComponent,
+    OrdersComponent,
+    MyOrdersComponent,
+    PostAbonnementFaqComponent
+
     
     
   
@@ -236,6 +289,13 @@ import { MailSenderServiceService } from './mail-sender-service.service';
     MatSnackBarModule,
     MatDialogModule,
     LeafletModule,
+    ReactiveFormsModule,MatDialogModule,MatToolbarModule,
+   MatInputModule,MatNativeDateModule,
+    MatFormFieldModule,NoopAnimationsModule,
+    FormsModule,MatIconModule,MatDatepickerModule,
+    AppRoutingModule,MatDividerModule,MatMenuModule,
+    HttpClientModule, MatSnackBarModule,MatSelectModule,
+    MatCardModule,MatTableModule
   
    
    
@@ -245,11 +305,13 @@ import { MailSenderServiceService } from './mail-sender-service.service';
   providers: [
    
     MailSenderServiceService,
-    NotificationService // Assurez-vous que MailSenderServiceService est également dans les fournisseurs si ce n'est pas déjà le cas
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    NotificationService ,// Assurez-vous que MailSenderServiceService est également dans les fournisseurs si ce n'est pas déjà le cas
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+
    
    
     
@@ -257,4 +319,6 @@ export class AppModule { }
     
  
 
-  
+
+
+export class AppModule { }

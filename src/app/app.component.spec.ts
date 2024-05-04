@@ -38,3 +38,5 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('front app is running!');
   });
 })})
+
+

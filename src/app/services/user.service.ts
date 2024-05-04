@@ -1,14 +1,17 @@
 // user.service.ts
 
-import { Injectable } from '@angular/core';
 
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import baseUrl from './helper';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private userId: number = 1;
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
    
 
@@ -19,5 +22,16 @@ export class UserService {
   getUserId(): number | undefined {
     return this.userId;
   }
+    //add user
+    public addUser(user:any){
+      return this.http.post(`${baseUrl}/user/`,user);
+  
+    }
 }
+
+
+  //constructor(private http:HttpClient) { }
+
+
+
 

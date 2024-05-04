@@ -1,5 +1,5 @@
 {
-  "name": "pidev",
+  "name": "front-and-back",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.2.10",
+    "@angular/animations": "^15.2.0",
     "@angular/cdk": "^15.2.9",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
@@ -36,6 +36,7 @@
     "qrcode": "^1.5.3",
     "qrcode-generator": "^1.4.4",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.10.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

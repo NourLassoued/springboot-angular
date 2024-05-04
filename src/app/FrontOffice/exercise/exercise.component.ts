@@ -25,6 +25,6 @@ export class ExerciseComponent implements OnInit{
   }
 
   getImageUrl(filename: string): string {
-    return `http://localhost:8070/files/get-image/${filename}`;
+    return `http://localhost:8082/files/get-image/${filename}`;
   }
 }

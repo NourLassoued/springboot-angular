@@ -7,7 +7,7 @@ import { ExerciseDay } from '../models/exercise-day.model';
   providedIn: 'root'
 })
 export class ExerciseDayService {
-  private baseUrl = 'http://localhost:8070/exerciseday';
+  private baseUrl = 'http://localhost:8082/exerciseday';
 
   constructor(private http: HttpClient) {}
 

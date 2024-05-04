@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WorkoutprogramService {
-  private baseUrl='http://localhost:8070';
+  private baseUrl='http://localhost:8082';
 
   constructor(private http:HttpClient) { }
 

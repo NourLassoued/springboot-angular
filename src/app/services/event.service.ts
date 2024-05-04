@@ -8,7 +8,7 @@ import { Participation } from '../models/participation.model';
   providedIn: 'root'
 })
 export class EventService {
-  private apiUrl='http://localhost:8070/event';
+  private apiUrl='http://localhost:8082/event';
   private events: Event[] = []
   constructor(private http:HttpClient) { }
   createEvent(event:Event):Observable<Event>{

@@ -11,7 +11,7 @@ import * as QRCode from 'qrcode';
 })
 export class ParticipationService {
 
-  private apiUrl='http://localhost:8070/participation';
+  private apiUrl='http://localhost:8082/participation';
 
   constructor(private http:HttpClient) { }
   

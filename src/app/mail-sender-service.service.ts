@@ -10,7 +10,7 @@ import { QRCodeService } from './qrcode.service';
   providedIn: 'root'
 })
 export class MailSenderServiceService {
-  private apiUrl = 'http://localhost:8070';
+  private apiUrl = 'http://localhost:8082';
   private qrCodeImageUrl: string = "assets/qr-code.png";
 
   /*

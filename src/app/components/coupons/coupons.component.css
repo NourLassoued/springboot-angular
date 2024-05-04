@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200%; /* Ajustez la hauteur selon vos besoins */
+  }
+  
+  .mat-card {
+    width: 200%; /* Ajustez la largeur selon vos besoins */
+  }
+  

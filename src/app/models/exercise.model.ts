@@ -10,6 +10,7 @@ export class Exercise {
         public repo:number,
         public duration:number,
         public image:string,
+      
         public exerciseDay?: ExerciseDay
     ){}
 }

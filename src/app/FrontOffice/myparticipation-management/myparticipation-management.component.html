@@ -25,20 +25,27 @@
 <br>
 <br>
 <br><!-- Navbar and other styles and imports -->
-<div *ngIf="participations.length > 0" class="participation-container">
- 
-  <div *ngFor="let participation of participations" class="participation-card">
-    <p><strong>Event Title:</strong> {{ participation?.event?.titre || 'Unknown' }}</p>
-    <p><strong>Registration Date:</strong> {{ participation?.registrationDate | date }}</p>
-    <p><strong>Injury:</strong> {{ participation?.injury }}</p>
-    <p><strong>Emergency Number:</strong> {{ participation?.emergencyNumber }}</p>
-    <button (click)="deleteParticipation(participation.id)">Delete</button>
-    <button (click)="updateParticipation(participation)">update</button>
 
-   
+    <div *ngIf="participations.length > 0" class="participation-container">
+ 
+      <div *ngFor="let participation of participations" class="participation-card">
+        
+    <p><strong>Registration Date:</strong> {{ participation.registrationDate | date }}</p>
+    <p><strong>Injury:</strong> {{ participation.injury }}</p>
+    <p><strong>Emergency Number:</strong> {{ participation.emergencyNumber }}</p>
+    <button mat-icon-button (click)="updateParticipation(participation)" style="margin-right: 200px;" color="primary"><mat-icon>edit</mat-icon>
+    </button>
+    
+    <button mat-icon-button  (click)="deleteParticipation(participation.id)"   color="warn"><mat-icon>delete</mat-icon>
+    </button>
+    
+
+  </div>
 </div>
 
 
 <div *ngIf="participations.length === 0">
   <p>No participations found for this user.</p>
 </div>
+
+<app-footer-front></app-footer-front>

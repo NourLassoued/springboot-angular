@@ -101,3 +101,26 @@
 .participation-form.hidden {
   display: none;
 }
+.event-description-toggle {
+  color: red; /* Couleur du texte */
+  cursor: pointer;
+}
+
+.event-description-toggle:hover {
+  text-decoration: underline; /* Soulignement au survol */
+}
+
+.map-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mat-icon {
+  color: red; /* Couleur rouge */
+}
+
+/* Modifier la taille de l'icône */
+.mat-icon {
+  font-size: 24px; /* Taille de police de 24 pixels */
+}

@@ -1,0 +1,11 @@
+.map-container {
+    width: 100%; /* Définissez la largeur du conteneur */
+    height: 600px; /* Augmentez la hauteur du conteneur */
+    margin-bottom: 20px; /* Marge inférieure pour séparer les cartes si nécessaire */
+  }
+  
+  /* Styles pour la carte Leaflet */
+  #map {
+    width: 100%; /* Assurez-vous que la carte prend toute la largeur du conteneur */
+    height: 100%; /* Assurez-vous que la carte prend toute la hauteur du conteneur */
+  }

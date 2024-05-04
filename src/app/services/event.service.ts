@@ -20,9 +20,13 @@ export class EventService {
   getAllEvents():Observable<Event[]>{
     return this.http.get<Event[]>(this.apiUrl);
   }
+  
   getEventById(id:number):Observable<Event>{
     return this.http.get<Event>(`${this.apiUrl}/${id}`);
   }
+  
+
+  
   updatEvent(event:Event):Observable<Event>{
     return this.http.put<Event>(`${this.apiUrl}/updatEvent`,event);
   } 

@@ -25,22 +25,37 @@
 <br>
 <br>
 <div class="container">
+ 
+
 <div class="event-container">
     <div *ngFor="let event of events" class="event-card" >
       <h2>{{ event.titre }}</h2>
-      <p><strong>Description:</strong> {{ event.description }}</p>
+      <p><strong>Description:</strong> {{ showFullDescriptionMap[event.id] ? event.description : event.description | slice:0:100 }}</p>
+  <p *ngIf="event.description.length > 100 && !showFullDescriptionMap[event.id]">
+    <span *ngIf="!showFullDescriptionMap[event.id]" class="event-description-toggle" (click)="toggleDescription(event)">
+      {{ showFullDescriptionMap[event.id] ? 'Show Less' : 'Show More' }}
+    </span>
+    
+  </p>
       <p><strong>Duration:</strong> {{ event.duration }} h </p>
       <p><strong>EventDate</strong> {{ event.eventDate | date }}</p>
-      <p><strong>maxParticipant:</strong> {{ event.maxParticiaption }} </p>
-     
+      <p><strong>Available places:</strong> {{ event.maxParticiaption }} </p>
+      <mat-icon mat-icon-button (click)="openMapDialog(event)">location_on</mat-icon>
     
-      <img *ngIf="event.image" [src]="getImageUrl(event.image)" alt="{{event.titre}}">
-      <button  *ngIf="event.maxParticiaption > 0" (click)="joinEvent(event.id)">Join</button>
-    </div>
+       <div class="event-image-container">
+        <img *ngIf="event.image" [src]="getImageUrl(event.image)" alt="{{event.titre}}" style="max-width: 400px; max-height:300px;">
+
+       
+      <button *ngIf="event.maxParticiaption > 0 && !hasJoinedEvent(event.id)" (click)="joinEvent(event.id)">Join</button>
+      <button *ngIf="hasJoinedEvent(event.id)" disabled>Already Joined</button>
+      
+      </div>
+
+</div>
   </div>
   
   </div>
-  
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 
 <!-- Footer -->
 <app-footer-front></app-footer-front>

@@ -1,3 +1,5 @@
+import { Participation } from "./participation.model";
+
 export class User {
     constructor(
         public id:number,
@@ -7,7 +9,8 @@ export class User {
         public weight:number,
         public hight:number,
         public objectif:string,
-        public imc:number
+        public imc:number,
+        public participations: Participation[],
     ){
 
     }

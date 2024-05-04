@@ -50,7 +50,7 @@
 }
 
 .participation-card button {
-  background-color: #4CAF50; /* Fond vert */
+  background-color: #f44336; /* Fond vert */
   color: white; /* Texte blanc */
   padding: 10px 15px; /* Rembourrage autour du texte */
   margin: 10px 0; /* Marge autour du bouton */
@@ -61,7 +61,7 @@
 }
 
 .participation-card button:hover {
-  background-color: #45a049; /* Nuance plus foncée de vert au survol */
+  background-color:#f44336;  /* Nuance plus foncée de vert au survol */
   transform: scale(1.05); /* Légère augmentation de la taille au survol */
 }
 

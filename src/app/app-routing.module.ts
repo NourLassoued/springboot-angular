@@ -52,6 +52,7 @@ import { AddEventComponent } from './BackOffice/event-management/add-event/add-e
 import { UpdateEventComponent } from './BackOffice/event-management/update-event/update-event.component';
 import { EventgroupeManagementComponent } from './FrontOffice/eventgroupe-management/eventgroupe-management.component';
 import { MyparticipationManagementComponent } from './FrontOffice/myparticipation-management/myparticipation-management.component';
+
 const routes: Routes = [
   {
     path: "Admin",
@@ -185,6 +186,7 @@ const routes: Routes = [
     path: "myparticipation",
     component:MyparticipationManagementComponent
   }
+ 
   
 ];
 

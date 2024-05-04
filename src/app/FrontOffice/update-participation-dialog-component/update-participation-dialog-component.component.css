@@ -1,1 +1,36 @@
+/* Style pour le formulaire de participation */
+.participation-form {
+    margin-top: 20px;
+    text-align: center; /* Centrer horizontalement les éléments */
+}
 
+/* Style pour les champs de formulaire */
+.mat-form-field {
+    width: 50%; /* Vous pouvez ajuster la largeur selon vos besoins */
+    margin: 0 auto; /* Centrer le champ de formulaire horizontalement */
+    margin-bottom: 15px;
+}
+
+/* Style pour les étiquettes des champs de formulaire */
+.mat-form-field-label {
+    color: #333; /* Couleur du texte */
+}
+
+/* Style pour les indicateurs */
+.mat-hint {
+    font-size: 14px; /* Taille de la police */
+    color: #666; /* Couleur du texte */
+}
+
+/* Style pour les champs de saisie */
+.mat-input-element {
+    font-size: 16px;
+}
+
+/* Style pour le bouton "Submit" */
+button[type="submit"] {
+    background-color: #cd0707; /* Couleur de fond rouge */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+    margin-top: 10px; /* Ajouter de la distance en haut du bouton */
+}

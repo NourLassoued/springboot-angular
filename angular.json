@@ -29,11 +29,18 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.css",
-              "@angular/material/prebuilt-themes/indigo-pink.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet.markercluster/dist/MarkerCluster.css",
+              "node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css",
+              "src/styles.css"
+            
+      
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-               "/node_modules/chart.js"
+               "/node_modules/chart.js",
+               "node_modules/leaflet.markercluster/dist/leaflet.markercluster.js"
             ]
               
               

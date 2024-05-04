@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllTemplateBackComponent } from './BackOffice/all-template-back/all-template-back.component';
@@ -92,6 +94,10 @@ import { ParticipationManagementComponent } from './FrontOffice/participation-ma
 import { EventgroupeManagementComponent } from './FrontOffice/eventgroupe-management/eventgroupe-management.component';
 import { ParticipationFormDialogComponent } from './FrontOffice/participation-form-dialog/participation-form-dialog.component';
 import { UpdateParticipationDialogComponentComponent } from './FrontOffice/update-participation-dialog-component/update-participation-dialog-component.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapDialogComponent } from './map-dialog/map-dialog.component';
+import { MailSenderServiceService } from './mail-sender-service.service';
+
 
 
 
@@ -131,7 +137,6 @@ import { UpdateParticipationDialogComponentComponent } from './FrontOffice/updat
     MyworkoutsComponent,
     MyexercisesDayComponent,
     StartExerciseComponent,
-   
   
    
     FooterBackComponent,
@@ -194,8 +199,11 @@ import { UpdateParticipationDialogComponentComponent } from './FrontOffice/updat
     EventgroupeManagementComponent,
     ParticipationFormDialogComponent,
     UpdateParticipationDialogComponentComponent,
+    MapDialogComponent,
+     
+
     
-   
+    
   
     
     
@@ -226,11 +234,19 @@ import { UpdateParticipationDialogComponentComponent } from './FrontOffice/updat
     CommonModule,
     MatInputModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    LeafletModule,
+  
+   
    
   ],
  
-  providers: [NotificationService],
+ 
+  providers: [
+   
+    MailSenderServiceService,
+    NotificationService // Assurez-vous que MailSenderServiceService est également dans les fournisseurs si ce n'est pas déjà le cas
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

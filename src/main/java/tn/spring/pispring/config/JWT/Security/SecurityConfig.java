@@ -21,56 +21,22 @@ import tn.spring.pispring.config.JWT.JwtAuthTokenFilter;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    server.servlet.context-path=/nour
+    spring.datasource.url=jdbc:mysql://localhost:3306/nour?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
 
-    @Bean
-    public JwtAuthTokenFilter authenticationJwtTokenFilter() {
-        return new JwtAuthTokenFilter();
-    }
-    @Bean
-    public AuthenticationEntryPoint authenticationEntryPoint() {
-        return jwtAuthEntryPoint;
+            ###spring.datasource.url=jdbc:mysql://localhost:3306/pi_dev_dbbb
+    spring.datasource.username=root
+    spring.datasource.password=
+    spring.jpa.show-sql=true
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 
-    }
-    @Autowired
-    private JwtAuthEntryPoint jwtAuthEntryPoint;
-    @Autowired
-   private CorsConfigurationSource corsConfigurationSource;
+    spring.mvc.pathmatch.matching-strategy=ant-path-matcher
 
 
 
+    server.port=8081
 
-    @Override
-
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .cors().configurationSource(corsConfigurationSource).and()
-                .csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests()
-                .antMatchers("/api/auth/refreshToken").permitAll() // Permit access to refreshToken endpoint
-
-                .antMatchers("/**").permitAll()
-               // .anyRequest().authenticated() // Require authentication for any other endpoint
-
-                .and()
-                .httpBasic();
-                
-                 http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
-               .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint());
-    }
-
-
-
-    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder()
-    {
-        return new BCryptPasswordEncoder();
-    }
 }

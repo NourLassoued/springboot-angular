@@ -30,7 +30,9 @@ public class FileController {
 
         try {
             byte[] bytes = file.getBytes();
+            // Créer le chemin du fichier
             Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
+            // Créer les répertoires s'ils n'existent pas
             Files.createDirectories(path.getParent());
             Files.write(path, bytes);
 
@@ -40,11 +42,12 @@ public class FileController {
         }
     }
     @GetMapping("/get-image/{filename:.+}")
-    public ResponseEntity<Resource> getImage(@PathVariable String filename) {
+        public ResponseEntity<Resource> getImage(@PathVariable String filename) {
         try {
             Path file = Paths.get(UPLOAD_DIR).resolve(filename);
+            // Récupérer la ressource du fichier
             Resource resource = new UrlResource(file.toUri());
-
+            // Vérifier si la ressource existe et est lisible
             if (resource.exists() && resource.isReadable()) {
                 return ResponseEntity.ok()
                         .contentType(MediaType.IMAGE_JPEG)
